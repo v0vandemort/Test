@@ -1,0 +1,6 @@
+div > .form{
+    display: flex;
+    width:50%;
+    align-content: center;
+
+}

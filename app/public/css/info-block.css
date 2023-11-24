@@ -1,0 +1,17 @@
+main{
+    display: flex;
+    background-color: aqua;
+}
+
+.info-block{
+    flex: 70%;
+    background-color: #ff3d00;
+}
+
+.button-block{
+    flex: 70%;
+}
+
+.content-table{
+    background-color: aquamarine;
+}
