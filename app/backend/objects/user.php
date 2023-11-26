@@ -1,19 +1,19 @@
 <?php
 class user extends people
 {
-    public $login;
+    public $email;
     public $password;
-    public $parentsPhone;
+    public $phone;
 
 
-    public function setLogin($newLogin): void
+    public function setLogin($newEmail): void
     {
-        $this->login = $newLogin;
+        $this->email = $newEmail;
     }
 
-    public function getLogin()
+    public function getEmail()
     {
-        return $this->login;
+        return $this->email;
     }
 
 
@@ -22,11 +22,19 @@ class user extends people
         $this->password = $newPassword;
     }
 
-    public function getpassword()
+    public function getPassword()
     {
         return $this->password;
     }
+    public function setPhone($newPhone): void
+    {
+        $this->phone=$newPhone;
+    }
 
+    public function getPhone()
+    {
+        return $this->phone;
+    }
 
 }
 

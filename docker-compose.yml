@@ -25,7 +25,10 @@ services:
       - PMA_ARBITRARY=1
 
   php:
-    image: php:fpm
+    image: php:8.0.30-apache
+    build:
+      context: .
+      dockerfile: "./config/php/Dockerfile"
     ports:
       - "9000:80"
     volumes:

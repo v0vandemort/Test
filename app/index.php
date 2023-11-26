@@ -8,41 +8,51 @@
     <title>Test - новая соцсеть</title>
     <link href="public/css/header.css" rel="stylesheet" type="text/css">
     <link href="public/css/form.css" rel="stylesheet" type="text/css">
-    <?php
-    require_once "./public/connect.php";
-    ?>
+    <link href="public/css/body.css" rel="stylesheet" type="text/css">
+
 </head>
 <body>
-<header>
-    <DIV class="logo">
-        <a href="index.php ">
-            <img src="public/logo.png.webp" width="60" height="60px" />
-        </a>
-    </DIV>
-    <div class="menu">
-        <ul>
-            <li><a href="#" onclick= "load('userPage')">Мой профиль</a></li>
-            <li><a href="#" onclick= "load('allUsersPage')">Все пользователи</a></li>
-        </ul>
-    </div>
-    <div class="tel">
-        <ul align="right">
-            <li><a href="#" onclick= "load('loginPage')">Авторизация</a></li>
-            <li><a href="#" onclick= "load('registrationPage')">Регистрация</a></li>
-        </ul>
-    </div>
-</header>
+    <header>
+        <DIV class="logo">
+            <a href="index.php ">
+                <img src="public/logo.png.webp" width="60" height="60px" />
+            </a>
+        </DIV>
+        <div class="menu">
+            <ul>
+                <li><a href="#" onclick= "load('userPage')">Мой профиль</a></li>
+                <li><a href="#" onclick= "load('allUsersPage')">Все пользователи</a></li>
+            </ul>
+        </div>
+        <div class="tel">
+            <ul align="right">
+                <li><a href="#" onclick= "load('loginPage')">Авторизация</a></li>
+                <li><a href="#" onclick= "load('registrationPage')">Регистрация</a></li>
+            </ul>
+        </div>
+    </header>
 
-<div id="main" class="demo">
-    <h1 align="center">Новая соцсеть</h1>
-    <h1 align="center">ТЕСТ</h1>
-    <button onclick="loadBase()" class="start">Начать работу</button>
+    <main id="main" class="demo">
+        <section >
+            <h1 align="center">Новая соцсеть</h1>
+            <h1 align="center">ТЕСТ</h1>
+        </section>
+        <section width="50%" maxwidth="50%" align="center">
 
-</div>
+                <?php
+
+
+                require_once "./public/connect.php";
+                ?>
+
+
+            <!--    <button onclick="loadBase()" class="start">Начать работу</button>-->
+        </section>
+    </main>
 
 
 
-<script src="public/js/menu.js"></script>
+    <script src="public/js/menu.js"></script>
 
 </body>
 </html>

@@ -1,17 +1,26 @@
-            <h1 align="center"><?php
-                echo ("Авторизация");
-                ?></h1>
-<table class="content-table" align="center" width="50%" style="background-color: #B2B1B4">
+<section >
+    <h1 align="center">
+        <?php
+        echo("Авторизация");
+        ?>
+    </h1>
+</section>
+
+<section width="50%" maxwidth="50%" align="center">
     <div class="form" align="center">
-        <form  class="login" align="center">
-            <label>Login</label>
-            <input name="login">
+        <form action="./scripts/checkLogin.php" class="login" align="center" metod="post">
+            <label>Login: почта или телефон</label>
+            <input name="login" required>
             <label>Password</label>
-            <input name="password" type="password">
+            <input name="password" type="password" required>
+            <label>
+                <?php
+                if (isset($_SESSION['message'])){
+                    echo ($_SESSION['message']);
+                }
+                ?>
+            </label>
             <button type="submit" onclick="">Войти</button>
         </form>
-        </form>
     </div>
-
-</table>
-
+</section>

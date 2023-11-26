@@ -3,7 +3,7 @@ class people{
     public $firstName;
     public $lastName;
     public $birthDay;
-    public $phone;
+
 
 
     public function setName($newFirstName): void
@@ -35,23 +35,6 @@ class people{
     public function getBirthday()
     {
         return $this->birthDay;
-    }
-
-
-
-
-    public function setPhone($newPhone): void
-    {
-        $this->phone=$newPhone;
-    }
-
-    public function getPhone()
-    {
-        return $this->phone;
-    }
-
-    public function saveToDb(){
-
     }
 
 }

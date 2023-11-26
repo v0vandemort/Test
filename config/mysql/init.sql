@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS People
     LastName VARCHAR(20),
     FirstName VARCHAR(20) Not Null,
     BithDay DATE,
-    Phone INT
+    Phone INT UNIQUE
 
 );
 
@@ -20,6 +20,6 @@ create table IF NOT EXISTS Users
     Phone int not null,
     Password VARCHAR(20) not null,
     UserId INT not null,
-    FOREIGN KEY  (UserId)  REFERENCES People (Id)
+    FOREIGN KEY  (UserId)  REFERENCES People (Id),
     FOREIGN KEY  (Phone)  REFERENCES People (Phone)
 );

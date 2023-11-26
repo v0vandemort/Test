@@ -1,0 +1,16 @@
+form.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Занимает всю высоту экрана */
+    margin: 0; /* Убедимся, что у формы нет внешних отступов */
+
+}
+
+form.login label,
+form.login input,
+form.login button {
+    margin-bottom: 5px;
+    width: 20%;
+}
