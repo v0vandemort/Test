@@ -1,3 +1,6 @@
+<?php
+require_once "../../header.php";
+?>
 <section >
     <h1 align="center">
         <?php
@@ -24,3 +27,6 @@
         </form>
     </div>
 </section>
+<?php
+require_once "../../footer.php";
+?>

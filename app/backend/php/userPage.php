@@ -1,3 +1,6 @@
+<?php
+require_once "../../header.php";
+?>
 <h1 align="center"><?php
     echo ("Мой профиль");
     ?></h1>
@@ -27,3 +30,6 @@
 
 </table>
 
+<?php
+require_once "../../footer.php";
+?>

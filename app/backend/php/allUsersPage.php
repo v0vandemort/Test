@@ -1,3 +1,7 @@
+<?php
+    require_once "../../header.php";
+?>
+
 <h1 align="center"><?php
     echo ("Все пользователи");
     ?></h1>
@@ -41,3 +45,6 @@
     </tbody>
 </table>
 
+<?php
+require_once "../../footer.php";
+?>

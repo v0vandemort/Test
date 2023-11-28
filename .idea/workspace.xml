@@ -1,26 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a7555e89-82f2-44e6-960f-90dce507d22d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/backend/php/scripts/addUser.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/backend/php/scripts/setUser.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/backend/php/scripts/sql/addUser.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/backend/php/scripts/sql/checkLogin.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/info.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/public/css/body.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/public/js/checkPassRegistr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/test.php" afterDir="false" />
+    <list default="true" id="a7555e89-82f2-44e6-960f-90dce507d22d" name="Changes" comment="with class user/people">
+      <change afterPath="$PROJECT_DIR$/app/backend/php/scripts/sql/addPeople.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/footer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/header.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/backend/objects/people.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/backend/objects/people.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/backend/objects/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/backend/objects/user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/backend/php/allUsersPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/backend/php/allUsersPage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/backend/php/loginPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/backend/php/loginPage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/backend/php/registrationPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/backend/php/registrationPage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/backend/php/scripts/checkLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/backend/php/scripts/checkLogin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/backend/php/scripts/addUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/backend/php/scripts/addUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/backend/php/scripts/setUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/backend/php/scripts/setUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/backend/php/scripts/sql/addUser.sql" beforeDir="false" afterPath="$PROJECT_DIR$/app/backend/php/scripts/sql/addUser.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/backend/php/userPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/backend/php/userPage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/public/connect.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/public/connect.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/public/js/checkPassRegistr.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/public/js/checkPassRegistr.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/mysql/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/config/mysql/init.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/php/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/config/php/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +35,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -51,21 +51,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/vladimirmamysev/Desktop/MyPETs/Test/app/backend/php&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;web-ide.project.structure&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/vladimirmamysev/Desktop/MyPETs/Test/app",
+    "list.type.of.created.stylesheet": "CSS",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "web-ide.project.structure",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/app/backend/php" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -108,8 +109,17 @@
       <workItem from="1699935645946" duration="9589000" />
       <workItem from="1700222789497" duration="18806000" />
       <workItem from="1700710785592" duration="15764000" />
-      <workItem from="1700829191440" duration="19266000" />
+      <workItem from="1700829191440" duration="44922000" />
+      <workItem from="1701138846003" duration="4742000" />
     </task>
+    <task id="LOCAL-00001" summary="with class user/people">
+      <created>1700990839191</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1700990839191</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,5 +135,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="with class user/people" />
+    <option name="LAST_COMMIT_MESSAGE" value="with class user/people" />
   </component>
 </project>

@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -20,14 +23,14 @@
         </DIV>
         <div class="menu">
             <ul>
-                <li><a href="#" onclick= "load('userPage')">Мой профиль</a></li>
-                <li><a href="#" onclick= "load('allUsersPage')">Все пользователи</a></li>
+                <li><a href="backend/php/userPage.php" >Мой профиль</a></li>
+                <li><a href="backend/php/allUsersPage.php" >Все пользователи</a></li>
             </ul>
         </div>
         <div class="tel">
             <ul align="right">
-                <li><a href="#" onclick= "load('loginPage')">Авторизация</a></li>
-                <li><a href="#" onclick= "load('registrationPage')">Регистрация</a></li>
+                <li><a href="backend/php/loginPage.php" >Авторизация</a></li>
+                <li><a href="backend/php/registrationPage.php">Регистрация</a></li>
             </ul>
         </div>
     </header>
@@ -53,6 +56,7 @@
 
 
     <script src="public/js/menu.js"></script>
+    <script src="public/js/checkPassRegistr.js"></script>
 
 </body>
 </html>

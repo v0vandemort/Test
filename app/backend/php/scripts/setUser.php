@@ -6,7 +6,7 @@ $user = new user();
 
 
 $email=$_POST['email']??'';
-$phone=$_POST['phone']??'';
+$phone=intval($_POST['phone'])??'';
 $name=$_POST['firstName']??'';
 $lastname=$_POST['lastName']??'';
 $birthday=$_POST['birthday']??'';
