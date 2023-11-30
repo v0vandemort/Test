@@ -1,17 +1,19 @@
-// //
-// // document.getElementById("regForm").addEventListener("submit", function (event){
-// //
-// //         event.preventDefault();
-// //         let password = document.getElementById("passwordConfirm").value;
-// //         let passwordConfirm = document.getElementById("passwordConfirmRepeat").value;
-// //
-// //         if(password!==passwordConfirm){
-// //             alert("Пароли не совпадают")
-// //             return false;
-// //         }
-// //
-// //         return true;
-// // });
+
+document.getElementById("regForm").addEventListener("submit", function (event){
+
+        event.preventDefault();
+        let password = document.getElementById("passwordConfirm").value;
+        let passwordConfirm = document.getElementById("passwordConfirmRepeat").value;
+
+        if(password!==passwordConfirm){
+            alert("Пароли не совпадают")
+            return false;
+        }
+
+        return true;
+});
+
+
 //
 // function checkPass() {
 //
@@ -33,26 +35,30 @@
 //     xhttp.open("GET", "../backend/php/"+page+".php", true);
 //     xhttp.send();
 // }
+//
 
-document.addEventListener('DOMContentLoaded', function () {
-    var password = document.getElementById('passwordConfirm');
-    var passwordConfirm = document.getElementById('passwordConfirmRepeat');
-    var passwordError = document.getElementById('messageReg');
 
-    password.addEventListener('input', validatePassword);
-    passwordConfirm.addEventListener('input', validatePassword);
+// document.addEventListener('DOMContentLoaded', function () {
+//     var password = document.getElementById('passwordConfirm');
+//     var passwordConfirm = document.getElementById('passwordConfirmRepeat');
+//     var passwordError = document.getElementById('messageReg');
+//
+//     password.addEventListener('input', validatePassword);
+//     passwordConfirm.addEventListener('input', validatePassword);
+//
+//     function validatePassword() {
+//         var pass1 = password.value;
+//         var pass2 = passwordConfirm.value;
+//
+//         if (pass1 !== pass2) {
+//             passwordError.textContent('Passwords do not match');
+//         } else {
+//             passwordError.textContent('Пароли совпадают');
+//         }
+//     }
+// });
 
-    function validatePassword() {
-        var pass1 = password.value;
-        var pass2 = passwordConfirm.value;
 
-        if (pass1 !== pass2) {
-            passwordError.textContent('Passwords do not match');
-        } else {
-            passwordError.textContent('Пароли совпадают');
-        }
-    }
-});
 
 //
 // function checkPass(event) {
