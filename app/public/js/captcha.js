@@ -89,5 +89,7 @@ function getParameters() {
     return result;
 }
 
-src = "https://smartcaptcha.yandexcloud.net/captcha.js?render=onload&onload=onSmartCaptchaReady"
-defer
+
+function callback(token) {
+    console.log(callback);
+}
