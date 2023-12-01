@@ -145,7 +145,19 @@ session_start();
 </section>
 <section width="50%" maxwidth="50%" align="center">
     <div class="form" align="center">
-        <form  class="login" align="center" id="regForm" method="POST" action="./scripts/addUser.php" >
+        <label >
+            <h2>
+
+            <?php
+            if (isset($_SESSION['message'])){
+                echo ($_SESSION['message']);
+                unset($_SESSION['message']);
+            }
+            ?>
+            </h2>
+        </label>
+
+        <form  class="registration" align="center" id="regForm" method="POST" action="./scripts/addUser.php" >
             <label>Email</label>
             <input name="email" required>
 
@@ -177,13 +189,7 @@ session_start();
 <!--            </span>-->
 <!---->
 <!---->
-<!--            <label >-->
-<!--                --><?php
-//                if (isset($_SESSION['message'])){
-//                    echo ($_SESSION['message']);
-//                }
-//                ?>
-<!--            </label>-->
+
 <!--            <div id="captcha-container" class="smart-captcha" ...>-->
 <!--                <input type="hidden" name="smart-token" value="ysc1_BfIZiCNyd0IxmNXXd25J5TUecCai2nLiPeDSu3Eh817e370c">-->
 <!--                ...-->

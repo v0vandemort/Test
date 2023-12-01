@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a7555e89-82f2-44e6-960f-90dce507d22d" name="Changes" comment="need to check captcha.js">
-      <change beforePath="$PROJECT_DIR$/.idea/BIGGESTPET_REMASTTER.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BIGGESTPET_REMASTTER.iml" afterDir="false" />
+    <list default="true" id="a7555e89-82f2-44e6-960f-90dce507d22d" name="Changes" comment="registration is active">
+      <change afterPath="$PROJECT_DIR$/app/public/js/checkLoginCap.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/backend/php/allUsersPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/backend/php/allUsersPage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/backend/php/loginPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/backend/php/loginPage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/backend/php/registrationPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/backend/php/registrationPage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/backend/php/scripts/addUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/backend/php/scripts/addUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/backend/php/userPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/backend/php/userPage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/public/js/captcha.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/public/js/captcha.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/public/js/checkPassRegistr.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/public/js/checkPassRegistr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/backend/php/scripts/captcha.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/backend/php/scripts/checkLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/backend/php/scripts/checkLogin.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +50,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/vladimirmamysev/Desktop/MyPETs/Test/app",
+    "last_opened_file_path": "/Users/vladimirmamysev/Desktop/MyPETs/Test/app/public/js",
     "list.type.of.created.stylesheet": "CSS",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "web-ide.project.structure",
@@ -63,6 +59,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/public/js" />
       <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/app/backend/php" />
     </key>
@@ -107,7 +104,7 @@
       <workItem from="1700222789497" duration="18806000" />
       <workItem from="1700710785592" duration="15764000" />
       <workItem from="1700829191440" duration="44922000" />
-      <workItem from="1701138846003" duration="27654000" />
+      <workItem from="1701138846003" duration="34066000" />
     </task>
     <task id="LOCAL-00001" summary="with class user/people">
       <created>1700990839191</created>
@@ -130,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701311347962</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="registration is active">
+      <created>1701411758609</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1701411758609</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,6 +154,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="with class user/people" />
     <MESSAGE value="need to check captcha.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="need to check captcha.js" />
+    <MESSAGE value="registration is active" />
+    <option name="LAST_COMMIT_MESSAGE" value="registration is active" />
   </component>
 </project>

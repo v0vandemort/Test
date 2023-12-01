@@ -45,28 +45,39 @@ session_start();
 
 <section width="50%" maxwidth="50%" align="center">
     <div class="form" align="center">
-        <form action="./scripts/checkLogin.php" class="login" align="center" metod="post">
+        <label><h3>
+
+            <?php
+            if (isset($_SESSION['message'])){
+                echo ($_SESSION['message']);
+                unset($_SESSION['message']);
+            }
+            ?>
+            </h3>
+        </label>
+        <form id="logForm" action="./scripts/checkLogin.php" class="loginForm" align="center" method="POST">
             <label>Login: почта или телефон</label>
             <input name="login" required>
             <label>Password</label>
             <input name="password" type="password" required>
-            <label>
-                <?php
-                if (isset($_SESSION['message'])){
-                    echo ($_SESSION['message']);
-                }
-                ?>
-            </label>
-            <button type="submit" onclick="">Войти</button>
+
+            <div
+                    id="captcha-container"
+                    class="smart-captcha"
+                    data-sitekey="ysc1_BfIZiCNyd0IxmNXXd25J5TUecCai2nLiPeDSu3Eh817e370c"
+                    data-hl="ru"
+                    data-callback="callback"
+            ></div>
+            <button type="submit" >Войти</button>
         </form>
     </div>
 </section>
 
 
 
-<script src="public/js/menu.js"></script>
-<script src="public/js/checkPassRegistr.js"></script>
-<script src = "https://smartcaptcha.yandexcloud.net/captcha.js?render=onload&onload=onSmartCaptchaReady"
-        defer></script>
+<!--<script src="public/js/menu.js"></script>-->
+<script src="../../public/js/checkLoginCap.js"></script>
+
+<script src="https://smartcaptcha.yandexcloud.net/captcha.js" defer></script>
 </body>
 </html>

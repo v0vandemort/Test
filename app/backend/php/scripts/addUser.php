@@ -1,17 +1,16 @@
 <?php
 
 session_start();
-echo "<pre>";
-print_r($_POST);
-echo "</pre>";
+
 
 $host = 'db';
 $user = 'root';
 $pass = 'example';
-$db="mydb1";
+$db = "mydb1";
 
-$pdo=new PDO("mysql:host=$host;dbname=$db",$user,$pass);
+$pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
 
 $email = $_POST['email'] ?? '';
 $phone = $_POST['phone'] ?? '';
@@ -22,10 +21,7 @@ $birthDay = date("Y.m.d", strtotime($birthDay));;
 $password = $_POST['password'] ?? '';
 $passwordConfirm = $_POST['passwordConfirm'] ?? '';
 
-
-
-
-
+try {
     $queryFunc = file_get_contents("./sql/addPeople.sql");
     $query = $pdo->prepare($queryFunc);
     $query->execute([
@@ -45,4 +41,17 @@ $passwordConfirm = $_POST['passwordConfirm'] ?? '';
         'userId' => $userId
 
     ]);
-    $_SESSION["message"]="Поздравляем с регистрацией";
+
+    $_SESSION["message"] = "Поздравляем с регистрацией";
+    header("Location: ../registrationPage.php");
+
+} catch (PDOException $e) {
+    if ($e->errorInfo[1] === 1062) {
+        $_SESSION['message'] = "Ошибка: Этот email или номер телефона уже зарегистрирован.";
+        header("Location: ../registrationPage.php");
+    } else {
+        // Обработка других ошибок БД
+        $_SESSION['message'] = "Ошибка при выполнении запроса: " . $e->getMessage();
+        header("Location: ../registrationPage.php");
+    }
+}

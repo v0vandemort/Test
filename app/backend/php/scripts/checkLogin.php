@@ -2,34 +2,40 @@
 
 session_start();
 
-require_once ("../../../public/connect.php");
+
+$host = 'db';
+$user = 'root';
+$pass = 'example';
+$db = "mydb1";
+
+$pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+$login = $_POST['login'] ?? '';
+$password = $_POST['password'] ?? '';
+//echo "<pre>";
+//print_r($_POST);
+//echo "</pre>";
 
 
-$login=$_POST['login'];
-$password=$_POST['password'];
-
-$queryFunc="'"+require_once "./sql/checkLogin.sql"+"'";
+$queryFunc = file_get_contents("./sql/checkLogin.sql");
 $query = $pdo->prepare($queryFunc);
-$query->execute(['login' => $login]);
-$Users = $query->fetchAll();
+$query->execute([
+    'login' => $login,
+]);
 
-
-$UserName = "Нет логина";
-$UserPassword = "Нет пароля";
-
-if (isset($_POST["user-name"])) {
-    $UserName = $_POST["user-name"];
-};
-if (isset($_POST["Password"])) {
-    $UserPassword = $_POST["Password"];
-};
-
-if (($login === $UserName) & ($password === $UserPassword)) {
-    setcookie('authCookie', 'logged', 0, '/');
-    $_SESSION["message"] = 'Логин и пароль  верны';
-    $_SESSION["name"] = 'Admin';
-    header('Location: /Personal_account.php');
+$userData = $query->fetchAll();
+//echo "<pre>";
+//print_r($userData);
+//echo "</pre>";
+if ((($userData[0]['Email'] ==$login) OR ($userData[0]['Phone'] ==$login))AND($userData[0]["Password"]==$password)){
+    $_SESSION['message']='Вы успешно авторизованы';
 } else {
-    $_SESSION["message"] = '<br>Логин и/или пароль не верны';
-    header('Location: /index.php');
-};
+    $_SESSION['message']='Ошибка: Проверьте логин и пароль';
+
+}
+header("Location: ../loginPage.php");
+
+
+//    $_SESSION["message"]="Поздравляем с регистрацией. Войдите в аккаунт";
+//    header('Location: ../registrationPage.php');
