@@ -13,9 +13,7 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $login = $_POST['login'] ?? '';
 $password = $_POST['password'] ?? '';
-//echo "<pre>";
-//print_r($_POST);
-//echo "</pre>";
+
 
 
 $queryFunc = file_get_contents("./sql/checkLogin.sql");
@@ -25,13 +23,11 @@ $query->execute([
 ]);
 
 $userData = $query->fetchAll();
-//echo "<pre>";
-//print_r($userData);
-//echo "</pre>";
-if ((($userData[0]['Email'] ==$login) OR ($userData[0]['Phone'] ==$login))AND($userData[0]["Password"]==$password)){
-    $_SESSION['message']='Вы успешно авторизованы';
-    $_SESSION['user-id']= $userData[0]['UserId'];
-    $_SESSION['logged-in']=true;
+
+if ((($userData[0]['Email'] == $login) or ($userData[0]['Phone'] == $login)) and ($userData[0]["Password"] == $password)) {
+    $_SESSION['message'] = 'Вы успешно авторизованы';
+    $_SESSION['user-id'] = $userData[0]['UserId'];
+    $_SESSION['logged-in'] = true;
 
     $queryFunc = file_get_contents("./sql/getPerson.sql");
     $query = $pdo->prepare($queryFunc);
@@ -39,16 +35,14 @@ if ((($userData[0]['Email'] ==$login) OR ($userData[0]['Phone'] ==$login))AND($u
         'UserId' => $userData[0]['UserId'],
     ]);
 
-    $_SESSION['userData']=$query->fetchAll();
+    $_SESSION['userData'] = $query->fetchAll();
 
 
     header("Location: ../userPage.php");
 } else {
-    $_SESSION['message']='Ошибка: Проверьте логин и пароль';
+    $_SESSION['message'] = 'Ошибка: Проверьте логин и пароль';
 
     header("Location: ../loginPage.php");
 }
 
 
-//    $_SESSION["message"]="Поздравляем с регистрацией. Войдите в аккаунт";
-//    header('Location: ../registrationPage.php');

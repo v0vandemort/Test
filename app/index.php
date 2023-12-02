@@ -66,7 +66,6 @@ session_start();
                 ?>
 
 
-            <!--    <button onclick="loadBase()" class="start">Начать работу</button>-->
         </section>
     </main>
 

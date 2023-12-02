@@ -94,7 +94,6 @@ session_start();
 
 
 
-<!--<script src="public/js/menu.js"></script>-->
 <script src="../../public/js/checkLoginCap.js"></script>
 
 <script src="https://smartcaptcha.yandexcloud.net/captcha.js" defer></script>

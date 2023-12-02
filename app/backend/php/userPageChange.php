@@ -134,20 +134,6 @@ if(isset($_SESSION['logged-in'])) {
     <label>Repeat password</label>
     <input name="passwordConfirm" type="password" id="passwordConfirmRepeat" >
 
-    <!--            <span id="messageReg" style="font-size: 0.8em; color: #888;">-->
-    <!--                --><?php
-    //                    if (isset($_SESSION['message'])){
-    //                        echo ($_SESSION['message']);
-    //                    }
-    //                ?>
-    <!--            </span>-->
-    <!---->
-    <!---->
-
-    <!--            <div id="captcha-container" class="smart-captcha" ...>-->
-    <!--                <input type="hidden" name="smart-token" value="ysc1_BfIZiCNyd0IxmNXXd25J5TUecCai2nLiPeDSu3Eh817e370c">-->
-    <!--                ...-->
-    <!--            </div>-->
 
     <div
             id="captcha-container"

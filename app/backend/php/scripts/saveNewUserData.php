@@ -24,7 +24,7 @@ $passwordConfirm = $_POST['passwordConfirm'] ?? '';
 $queryP = 'UPDATE people SET';
 $queryU = 'UPDATE users SET';
 
-$currentUserId=$_SESSION['user-id'];
+$currentUserId = $_SESSION['user-id'];
 
 $updateDataFormPeople = [];
 $updateDataFormUser = [];
@@ -54,17 +54,17 @@ if (!empty($email)) {
 }
 
 
-    $queryUser="";
+$queryUser = "";
 if (!empty($updateDataFormUser)) {
-    $queryUser=$queryU;
+    $queryUser = $queryU;
     $queryUser .= ' ' . implode(', ', $updateDataFormUser);
     $queryUser .= " WHERE UserId=$currentUserId";
 } else {
 
 }
-    $queryPeople="";
+$queryPeople = "";
 if (!empty($updateDataFormPeople)) {
-    $queryPeople=$queryP;
+    $queryPeople = $queryP;
     $queryPeople .= ' ' . implode(', ', $updateDataFormPeople);
     $queryPeople .= " WHERE Id=$currentUserId";
 } else {
@@ -72,23 +72,21 @@ if (!empty($updateDataFormPeople)) {
 }
 
 
-//надо  изменить запрос на update
 
 
-//try {
-    if (!empty($queryPeople)){
-        $query = $pdo->prepare($queryPeople);
-        $query->execute();
-    }
-    if (!empty($queryUser)){
-        $query = $pdo->prepare($queryUser);
-        $query->execute();
-    }
+try {
+if (!empty($queryPeople)) {
+    $query = $pdo->prepare($queryPeople);
+    $query->execute();
+}
+if (!empty($queryUser)) {
+    $query = $pdo->prepare($queryUser);
+    $query->execute();
+}
 
 
+header("Location: ../registrationPage.php");
 
-    header("Location: ../registrationPage.php");
-
-//} catch (PDOException $e) {
-//   echo "ERROR";
-//}
+} catch (PDOException $e) {
+   echo "ERROR:".$e->getMessage();
+}
