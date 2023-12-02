@@ -1,5 +1,17 @@
 <?php
 session_start();
+
+if(!isset($_SESSION['logged-in'])){
+
+        header("Location: ./loginPage.php");
+}else{
+
+
+    if(!$_SESSION['logged-in']) {
+        header("Location: ./loginPage.php");
+    }
+}
+
 ?>
     <!doctype html>
     <html lang="en">
@@ -12,6 +24,8 @@ session_start();
         <link href="../../public/css/header.css" rel="stylesheet" type="text/css">
         <link href="../../public/css/form.css" rel="stylesheet" type="text/css">
         <link href="../../public/css/body.css" rel="stylesheet" type="text/css">
+        <link href="../../public/css/table.css" rel="stylesheet" type="text/css">
+
 
     </head>
 <body>
@@ -28,41 +42,74 @@ session_start();
         </ul>
     </div>
     <div class="tel">
+
         <ul align="right">
-            <li><a href="../../backend/php/loginPage.php" >Авторизация</a></li>
-            <li><a href="../../backend/php/registrationPage.php">Регистрация</a></li>
+            <?php
+            if(isset($_SESSION['logged-in'])){
+                if($_SESSION['logged-in']){
+                    echo '<li><a href="../../backend/php/scripts/logout.php" >Выход</a></li>';
+
+
+                }
+                else {
+                    echo '<li><a href="../../backend/php/loginPage.php" >Авторизация</a></li>';
+                    echo '<li><a href="../../backend/php/registrationPage.php">Регистрация</a></li>';
+                }
+            }
+            else{
+                    echo '<li><a href="../../backend/php/loginPage.php" >Авторизация</a></li>';
+                    echo '<li><a href="../../backend/php/registrationPage.php">Регистрация</a></li>';
+
+
+            }
+            ?>
         </ul>
     </div>
 </header>
-
 <h1 align="center"><?php
     echo ("Мой профиль");
     ?></h1>
-<table class="content-table" align="center" width="100%" >
-    <tr>
-        <td>
+
+<?php
+if(isset($_SESSION['logged-in'])) {
+    if ($_SESSION['logged-in']) {
+        echo '<table class="content-table" align="center" width="100%" >
+            <tr>
+                <th>Имя                 
+</th>
+                <td style="vertical-align: top;">';
+        echo $_SESSION['userData'][0]['FirstName'];
+        echo '</td>
+            </tr>
+            <tr>
+                <th>Фамилия
+    </th>
+                <td style="vertical-align: middle;">';
+        echo $_SESSION['userData'][0]['LastName'];
+        echo '</td>
+            </tr>
+            <tr>
+                <th>День рождения Год-Месяц-День </th>
+                <td style="vertical-align: bottom;">
+                
+        ';
+        echo $_SESSION['userData'][0]['BirthDay'];
+        echo '        
+</td>
+            </tr>
+        
+
+           </table>';
+    } else {
+    echo '<h2>Войдите в аккаунт</h2>';
+    }
+}
+?>
 
 
-        </td>
-    </tr>
-    <tr>
-        <td width="70%">
-
-            <div class="info-block">
-                <table>Some customers</table>
-
-            </div>
-        </td>
-        <td width="30%">
-
-            <div class="button-block">
-                <button href="#" class="addButton" onclick="loadModal('addCustomerModal')">Добавить клиента</button>
-            </div>
-        </td>
-    </tr>
 
 
-</table>
+
 
 
 

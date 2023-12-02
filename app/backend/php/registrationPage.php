@@ -12,7 +12,9 @@ session_start();
         <link href="../../public/css/header.css" rel="stylesheet" type="text/css">
         <link href="../../public/css/form.css" rel="stylesheet" type="text/css">
         <link href="../../public/css/body.css" rel="stylesheet" type="text/css">
-<!--        <script>-->
+        <link href="../../public/css/table.css" rel="stylesheet" type="text/css">
+
+        <!--        <script>-->
 <!--            function onSmartCaptchaReady() {-->
 <!--                if (!window.smartCaptcha) {-->
 <!--                    throw new Error("SmartCaptcha is not present");-->
@@ -130,8 +132,25 @@ session_start();
     </div>
     <div class="tel">
         <ul align="right">
-            <li><a href="../../backend/php/loginPage.php" >Авторизация</a></li>
-            <li><a href="../../backend/php/registrationPage.php">Регистрация</a></li>
+            <?php
+            if(isset($_SESSION['logged-in'])){
+                if($_SESSION['logged-in']){
+                    echo '<li><a href="../../backend/php/scripts/logout.php" >Выход</a></li>';
+
+
+                }
+                else {
+                    echo '<li><a href="../../backend/php/loginPage.php" >Авторизация</a></li>';
+                    echo '<li><a href="../../backend/php/registrationPage.php">Регистрация</a></li>';
+                }
+            }
+            else{
+                echo '<li><a href="../../backend/php/loginPage.php" >Авторизация</a></li>';
+                echo '<li><a href="../../backend/php/registrationPage.php">Регистрация</a></li>';
+
+
+            }
+            ?>
         </ul>
     </div>
 </header>

@@ -1,1 +1,1 @@
-SELECT Email,Phone,Password from Users where Email= :login or Phone= :login
+SELECT Email,Phone,Password,UserId from Users where Email= :login or Phone= :login

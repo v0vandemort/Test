@@ -1,5 +1,27 @@
 <?php
 session_start();
+
+
+$host = 'db';
+$user = 'root';
+$pass = 'example';
+$db = "mydb1";
+
+$pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+
+if(!isset($_SESSION['logged-in'])){
+
+    header("Location: ./loginPage.php");
+}else{
+
+
+    if(!$_SESSION['logged-in']) {
+        header("Location: ./loginPage.php");
+    }
+}
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -12,6 +34,7 @@ session_start();
     <link href="../../public/css/header.css" rel="stylesheet" type="text/css">
     <link href="../../public/css/form.css" rel="stylesheet" type="text/css">
     <link href="../../public/css/body.css" rel="stylesheet" type="text/css">
+    <link href="../../public/css/table.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
@@ -29,8 +52,25 @@ session_start();
     </div>
     <div class="tel">
         <ul align="right">
-            <li><a href="../../backend/php/loginPage.php" >Авторизация</a></li>
-            <li><a href="../../backend/php/registrationPage.php">Регистрация</a></li>
+            <?php
+            if(isset($_SESSION['logged-in'])){
+                if($_SESSION['logged-in']){
+                    echo '<li><a href="../../backend/php/scripts/logout.php" >Выход</a></li>';
+
+
+                }
+                else {
+                    echo '<li><a href="../../backend/php/loginPage.php" >Авторизация</a></li>';
+                    echo '<li><a href="../../backend/php/registrationPage.php">Регистрация</a></li>';
+                }
+            }
+            else{
+                echo '<li><a href="../../backend/php/loginPage.php" >Авторизация</a></li>';
+                echo '<li><a href="../../backend/php/registrationPage.php">Регистрация</a></li>';
+
+
+            }
+            ?>
         </ul>
     </div>
 </header>
@@ -40,47 +80,66 @@ session_start();
 <h1 align="center"><?php
     echo ("Все пользователи");
     ?></h1>
-<table class="content-table" align="center" width="100%" >
-    <thead>
 
-        <tr width="70%" >
-            <th width="30%" scope="col">
-                <h3>Имя</h3>
+<?php
+if(isset($_SESSION['logged-in'])) {
+if ($_SESSION['logged-in']) {
+    $queryFunc = file_get_contents("./scripts/sql/getAllPeople.sql");
+    $query = $pdo->prepare($queryFunc);
+    $query->execute();
 
-            </th>
+    $_SESSION['people']=$query->fetchAll();
 
-            <th width="30%" scope="col">
-                <h3>Фамилия</h3>
-
-            </th>
-
-            <th width="20%" scope="col">
-                <h3>День рождения</h3>
-
-            </th>
-
-            <th width="20%" scope="col">
-                <h3>Телефон</h3>
-            </th>
-        </tr>
-    </thead>
-    <tbody >
-        <tr align="center" width="70%   ">
-            <td>Петя</td>
-            <td>Петя</td>
-            <td>Петя</td>
-            <td>Петя</td>
-
-        </tr>
+//    echo '<pre>';
+//    print_r($_SESSION['people']);
+//    echo '</pre>';
 
 
+    echo '<table align="center" width="100%" >
+            <tr>
+                <th>Имя</th>';
+    echo $_SESSION['userData'][0]['FirstName'];
+    echo '
+         
+            
+                <th>Фамилия
+';
+    echo $_SESSION['userData'][0]['LastName'];
+    echo '
+            
+            
+                <th>День рождения Год-Месяц-День </th>
+              
+                
+        ';
+    echo $_SESSION['userData'][0]['BirthDay'];
+    echo '        
+</tr>
+        
+';$i=0;
+    while ($i<count($_SESSION['people'])){
+        echo '<tr><td>';
+        echo $_SESSION['people'][$i]['FirstName'];
+        echo '</td>';
+        echo '<td>';
+        echo $_SESSION['people'][$i]['LastName'];
+        echo '</td>';
+        echo '<td>';
+        echo $_SESSION['people'][$i]['BirthDay'];
+        echo '</td>';
+        $i++;
 
+    }
+    echo '</tr>
+           </table>';
+}else{
+    header("Location: ./loginPage.php");
+}
+} else{
+    header("Location: ./loginPage.php");
 
-
-    </tbody>
-</table>
-
-
+}
+?>
 
 <script src="public/js/menu.js"></script>
 <script src="public/js/checkPassRegistr.js"></script>

@@ -30,11 +30,24 @@ $userData = $query->fetchAll();
 //echo "</pre>";
 if ((($userData[0]['Email'] ==$login) OR ($userData[0]['Phone'] ==$login))AND($userData[0]["Password"]==$password)){
     $_SESSION['message']='Вы успешно авторизованы';
+    $_SESSION['user-id']= $userData[0]['UserId'];
+    $_SESSION['logged-in']=true;
+
+    $queryFunc = file_get_contents("./sql/getPerson.sql");
+    $query = $pdo->prepare($queryFunc);
+    $query->execute([
+        'UserId' => $userData[0]['UserId'],
+    ]);
+
+    $_SESSION['userData']=$query->fetchAll();
+
+
+    header("Location: ../userPage.php");
 } else {
     $_SESSION['message']='Ошибка: Проверьте логин и пароль';
 
+    header("Location: ../loginPage.php");
 }
-header("Location: ../loginPage.php");
 
 
 //    $_SESSION["message"]="Поздравляем с регистрацией. Войдите в аккаунт";

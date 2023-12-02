@@ -17,6 +17,6 @@ create table IF NOT EXISTS Users
     Email VARCHAR(20) UNIQUE ,
     Phone VARCHAR(13) UNIQUE,
     Password VARCHAR(20) NOT NULL,
-    UserId INT NOT NULL,
+    UserId INT ,
     FOREIGN KEY  (UserId)  REFERENCES People (Id)
 );

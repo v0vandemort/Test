@@ -43,15 +43,26 @@ try {
     ]);
 
     $_SESSION["message"] = "Поздравляем с регистрацией";
+    unset($userId);
     header("Location: ../registrationPage.php");
 
 } catch (PDOException $e) {
     if ($e->errorInfo[1] === 1062) {
         $_SESSION['message'] = "Ошибка: Этот email или номер телефона уже зарегистрирован.";
+        $queryFunc = "DELETE FROM People WHERE Id=:Id";
+        $query = $pdo->prepare($queryFunc);
+        $query->execute([
+            'Id' => $userId
+        ]);
         header("Location: ../registrationPage.php");
     } else {
         // Обработка других ошибок БД
         $_SESSION['message'] = "Ошибка при выполнении запроса: " . $e->getMessage();
+        $queryFunc = "DELETE FROM People WHERE Id=:Id";
+        $query = $pdo->prepare($queryFunc);
+        $query->execute([
+            'Id' => $userId
+        ]);
         header("Location: ../registrationPage.php");
     }
 }
