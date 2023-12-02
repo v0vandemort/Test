@@ -20,6 +20,7 @@ if(!isset($_SESSION['logged-in'])){
     if(!$_SESSION['logged-in']) {
         header("Location: ./loginPage.php");
     }
+
 }
 
 ?>
@@ -90,47 +91,38 @@ if ($_SESSION['logged-in']) {
 
     $_SESSION['people']=$query->fetchAll();
 
-//    echo '<pre>';
-//    print_r($_SESSION['people']);
-//    echo '</pre>';
+
 
 
     echo '<table align="center" width="100%" >
             <tr>
-                <th>Имя</th>';
-    echo $_SESSION['userData'][0]['FirstName'];
-    echo '
+                <th>Имя</th>
+ 
          
             
-                <th>Фамилия
-';
-    echo $_SESSION['userData'][0]['LastName'];
-    echo '
-            
+                <th>Фамилия</th>
+
             
                 <th>День рождения Год-Месяц-День </th>
-              
+            </tr>
+            
                 
-        ';
-    echo $_SESSION['userData'][0]['BirthDay'];
-    echo '        
-</tr>
-        
 ';$i=0;
     while ($i<count($_SESSION['people'])){
-        echo '<tr><td>';
+        echo '<tr><td align="center">';
         echo $_SESSION['people'][$i]['FirstName'];
         echo '</td>';
-        echo '<td>';
+        echo '<td align="center">';
         echo $_SESSION['people'][$i]['LastName'];
         echo '</td>';
-        echo '<td>';
+        echo '<td align="center">';
         echo $_SESSION['people'][$i]['BirthDay'];
         echo '</td>';
+        echo '</tr>';
         $i++;
 
     }
-    echo '</tr>
+    echo '
            </table>';
 }else{
     header("Location: ./loginPage.php");

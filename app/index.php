@@ -29,8 +29,25 @@ session_start();
         </div>
         <div class="tel">
             <ul align="right">
-                <li><a href="backend/php/loginPage.php" >Авторизация</a></li>
-                <li><a href="backend/php/registrationPage.php">Регистрация</a></li>
+                <?php
+                if(isset($_SESSION['logged-in'])){
+                    if($_SESSION['logged-in']){
+                        echo '<li><a href="../../backend/php/scripts/logout.php" >Выход</a></li>';
+
+
+                    }
+                    else {
+                        echo '<li><a href="../../backend/php/loginPage.php" >Авторизация</a></li>';
+                        echo '<li><a href="../../backend/php/registrationPage.php">Регистрация</a></li>';
+                    }
+                }
+                else{
+                    echo '<li><a href="../../backend/php/loginPage.php" >Авторизация</a></li>';
+                    echo '<li><a href="../../backend/php/registrationPage.php">Регистрация</a></li>';
+
+
+                }
+                ?>
             </ul>
         </div>
     </header>

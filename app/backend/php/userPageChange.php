@@ -10,25 +10,6 @@ if(!isset($_SESSION['logged-in'])){
     if(!$_SESSION['logged-in']) {
         header("Location: ./loginPage.php");
     }
- else {
-
-     $host = 'db';
-     $user = 'root';
-     $pass = 'example';
-     $db = "mydb1";
-
-     $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
-     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-     $queryFunc = file_get_contents("./scripts/sql/getPerson.sql");
-     $query = $pdo->prepare($queryFunc);
-     $query->execute([
-         'UserId' => $_SESSION['user-id'],
-     ]);
-
-     $_SESSION['userData']=$query->fetchAll();
-
- }
 }
 
 ?>
@@ -86,8 +67,12 @@ if(!isset($_SESSION['logged-in'])){
     </div>
 </header>
 <h1 align="center"><?php
-    echo ("Мой профиль");
+    echo ("Изменение профиля");
     ?></h1>
+<br>
+<h4 align="center"><?php
+    echo ("Ваши текущие данные:");
+    ?></h4>
 
 <?php
 if(isset($_SESSION['logged-in'])) {
@@ -124,17 +109,59 @@ if(isset($_SESSION['logged-in'])) {
     }
 }
 ?>
-<form action="userPageChange.php">
 
-<button >Изменить данные профиля</button>
+
+<form  class="regForm" align="center" id="regForm" method="POST" action="./scripts/saveNewUserData.php" >
+    <label>Email</label>
+    <input name="email" >
+
+    <label>Phone</label>
+    <span style="font-size: 0.8em; color: #888;">Введите номер без 8 или +7</span>
+    <input name="phone" type="text" pattern="[0-9]{10}" ="Введите 10 цифр, без +7 и 8" >
+
+
+    <label>First Name</label>
+    <input name="firstName" >
+
+    <label>Last name</label>
+    <input name="lastName" >
+
+    <label>BirthDay</label>
+    <input name="birthday" type="date" >
+
+    <label>Password</label>
+    <input name="password" type="password" id="passwordConfirm" >
+    <label>Repeat password</label>
+    <input name="passwordConfirm" type="password" id="passwordConfirmRepeat" >
+
+    <!--            <span id="messageReg" style="font-size: 0.8em; color: #888;">-->
+    <!--                --><?php
+    //                    if (isset($_SESSION['message'])){
+    //                        echo ($_SESSION['message']);
+    //                    }
+    //                ?>
+    <!--            </span>-->
+    <!---->
+    <!---->
+
+    <!--            <div id="captcha-container" class="smart-captcha" ...>-->
+    <!--                <input type="hidden" name="smart-token" value="ysc1_BfIZiCNyd0IxmNXXd25J5TUecCai2nLiPeDSu3Eh817e370c">-->
+    <!--                ...-->
+    <!--            </div>-->
+
+    <div
+            id="captcha-container"
+            class="smart-captcha"
+            data-sitekey="ysc1_BfIZiCNyd0IxmNXXd25J5TUecCai2nLiPeDSu3Eh817e370c"
+            data-hl="ru"
+            data-callback="callback"
+    ></div>
+    <button type="submit" >Изменить данные профиля</button>
 </form>
 
 
-<pre>
-    <?php
-    print_r($_SESSION);
-    ?>
-</pre>
+
+
 
 
 

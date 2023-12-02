@@ -22,3 +22,4 @@ document.getElementById("regForm").addEventListener("submit", function (event){
 
 });
 
+//this js is checking pass and capt in registration and changing UserData
