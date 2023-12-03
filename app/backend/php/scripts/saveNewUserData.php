@@ -21,8 +21,8 @@ $birthDay = date("Y.m.d", strtotime($birthDay));;
 $password = $_POST['password'] ?? '';
 $passwordConfirm = $_POST['passwordConfirm'] ?? '';
 
-$queryP = 'UPDATE people SET';
-$queryU = 'UPDATE users SET';
+$queryP = 'UPDATE People SET';
+$queryU = 'UPDATE Users SET';
 
 $currentUserId = $_SESSION['user-id'];
 
@@ -30,27 +30,27 @@ $updateDataFormPeople = [];
 $updateDataFormUser = [];
 
 if (!empty($firstName)) {
-    $updateDataFormPeople[] = "FirstName = $firstName";
+    $updateDataFormPeople[] = "FirstName = '$firstName'";
 }
 
 if (!empty($lastName)) {
-    $updateDataFormPeople[] = "LastName = $lastName";
+    $updateDataFormPeople[] = "LastName = '$lastName'";
 }
 
 if (!empty($birthDay)) {
-    $updateDataFormPeople[] = "BirthDay = $birthDay";
+    $updateDataFormPeople[] = "BirthDay = '$birthDay'";
 }
 
 if (!empty($email)) {
-    $updateDataFormUser[] = "Email = $email";
+    $updateDataFormUser[] = "Email = '$email'";
 }
 
 if (!empty($phone)) {
-    $updateDataFormUser[] = "Phone = $phone";
+    $updateDataFormUser[] = "Phone = '$phone'";
 }
 
-if (!empty($email)) {
-    $updateDataFormUser[] = "Password = $password";
+if (!empty($password)) {
+    $updateDataFormUser[] = "Password = '$password'";
 }
 
 
@@ -58,7 +58,7 @@ $queryUser = "";
 if (!empty($updateDataFormUser)) {
     $queryUser = $queryU;
     $queryUser .= ' ' . implode(', ', $updateDataFormUser);
-    $queryUser .= " WHERE UserId=$currentUserId";
+    $queryUser .= " WHERE UserId='$currentUserId'";
 } else {
 
 }
@@ -66,7 +66,7 @@ $queryPeople = "";
 if (!empty($updateDataFormPeople)) {
     $queryPeople = $queryP;
     $queryPeople .= ' ' . implode(', ', $updateDataFormPeople);
-    $queryPeople .= " WHERE Id=$currentUserId";
+    $queryPeople .= " WHERE Id='$currentUserId'";
 } else {
 
 }
@@ -89,4 +89,6 @@ header("Location: ../registrationPage.php");
 
 } catch (PDOException $e) {
    echo "ERROR:".$e->getMessage();
+   echo $queryPeople;
+   echo $queryUser;
 }
