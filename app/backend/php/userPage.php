@@ -130,11 +130,6 @@ if(isset($_SESSION['logged-in'])) {
 </form>
 
 
-<pre>
-    <?php
-    print_r($_SESSION);
-    ?>
-</pre>
 
 
 
