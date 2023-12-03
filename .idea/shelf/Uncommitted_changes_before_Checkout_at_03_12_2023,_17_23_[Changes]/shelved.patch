@@ -1,0 +1,63 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -1,18 +1,8 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="a7555e89-82f2-44e6-960f-90dce507d22d" name="Changes" comment="v.0,8 - registration,login is active, func change personData is active (bug - birthday)">
++    <list default="true" id="a7555e89-82f2-44e6-960f-90dce507d22d" name="Changes" comment="v.0,9 - registration,login is active, func change personData is active (bug - birthday)">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/backend/objects/customerMetod/customerSave.php" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/backend/objects/people.php" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/backend/objects/user.php" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/backend/php/objectScript/saveCustomer.php" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/backend/php/objectScript/setCustomerSrc.php" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/backend/php/userPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/backend/php/userPage.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/backend/php/userPageChange.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/backend/php/userPageChange.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/info.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/info.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/public/js/menu.js" beforeDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -110,7 +100,7 @@
+       <workItem from="1700710785592" duration="15764000" />
+       <workItem from="1700829191440" duration="44922000" />
+       <workItem from="1701138846003" duration="54373000" />
+-      <workItem from="1701580523365" duration="2146000" />
++      <workItem from="1701580523365" duration="3277000" />
+     </task>
+     <task id="LOCAL-00001" summary="with class user/people">
+       <created>1700990839191</created>
+@@ -189,7 +179,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1701581796230</updated>
+     </task>
+-    <option name="localTasksCounter" value="12" />
++    <task id="LOCAL-00012" summary="v.0,9 - registration,login is active, func change personData is active (bug - birthday)">
++      <created>1701597779746</created>
++      <option name="number" value="00012" />
++      <option name="presentableId" value="LOCAL-00012" />
++      <option name="project" value="LOCAL" />
++      <updated>1701597779746</updated>
++    </task>
++    <option name="localTasksCounter" value="13" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -216,6 +213,7 @@
+     <MESSAGE value="v.0,5 - registration,login is active, need to change func change personData" />
+     <MESSAGE value="v.0,5 - registration,login is active, func change personData is active (bug - birthday)" />
+     <MESSAGE value="v.0,8 - registration,login is active, func change personData is active (bug - birthday)" />
+-    <option name="LAST_COMMIT_MESSAGE" value="v.0,8 - registration,login is active, func change personData is active (bug - birthday)" />
++    <MESSAGE value="v.0,9 - registration,login is active, func change personData is active (bug - birthday)" />
++    <option name="LAST_COMMIT_MESSAGE" value="v.0,9 - registration,login is active, func change personData is active (bug - birthday)" />
+   </component>
+ </project>
+\ No newline at end of file
