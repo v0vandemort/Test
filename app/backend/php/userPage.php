@@ -88,7 +88,17 @@ if(!isset($_SESSION['logged-in'])){
 <h1 align="center"><?php
     echo ("Мой профиль");
     ?></h1>
+<br>
+<h3 align="center">
 
+<?php
+if(isset($_SESSION['message'])){
+    echo $_SESSION['message'];
+    unset($_SESSION['message']);
+}
+
+?>
+</h3>
 <?php
 if(isset($_SESSION['logged-in'])) {
     if ($_SESSION['logged-in']) {

@@ -84,8 +84,9 @@ if (!empty($queryUser)) {
     $query->execute();
 }
 
+$_SESSION['message']='Изменения сохранены';
 
-header("Location: ../registrationPage.php");
+header("Location: ../userPage.php");
 
 } catch (PDOException $e) {
    echo "ERROR:".$e->getMessage();

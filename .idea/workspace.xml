@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a7555e89-82f2-44e6-960f-90dce507d22d" name="Changes" comment="v.0,5 - registration,login is active, need to change func change personData">
+    <list default="true" id="a7555e89-82f2-44e6-960f-90dce507d22d" name="Changes" comment="v.0,5 - registration,login is active, func change personData is active (bug - birthday)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/backend/php/scripts/saveNewUserData.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/backend/php/scripts/saveNewUserData.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/backend/php/userPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/backend/php/userPage.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +102,7 @@
       <workItem from="1700710785592" duration="15764000" />
       <workItem from="1700829191440" duration="44922000" />
       <workItem from="1701138846003" duration="54373000" />
-      <workItem from="1701580523365" duration="837000" />
+      <workItem from="1701580523365" duration="1209000" />
     </task>
     <task id="LOCAL-00001" summary="with class user/people">
       <created>1700990839191</created>
@@ -166,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701580692496</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="v.0,5 - registration,login is active, func change personData is active (bug - birthday)">
+      <created>1701581419045</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1701581419045</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,6 +199,7 @@
     <MESSAGE value="registration,login is active, need to add func change personData" />
     <MESSAGE value="registration,login is active, need to change func change personData" />
     <MESSAGE value="v.0,5 - registration,login is active, need to change func change personData" />
-    <option name="LAST_COMMIT_MESSAGE" value="v.0,5 - registration,login is active, need to change func change personData" />
+    <MESSAGE value="v.0,5 - registration,login is active, func change personData is active (bug - birthday)" />
+    <option name="LAST_COMMIT_MESSAGE" value="v.0,5 - registration,login is active, func change personData is active (bug - birthday)" />
   </component>
 </project>
