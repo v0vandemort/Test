@@ -3,16 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a7555e89-82f2-44e6-960f-90dce507d22d" name="Changes" comment="v.0,8 - registration,login is active, func change personData is active (bug - birthday)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/backend/objects/customerMetod/customerSave.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/backend/objects/people.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/backend/objects/user.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/backend/php/objectScript/saveCustomer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/backend/php/objectScript/setCustomerSrc.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/backend/php/userPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/backend/php/userPage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/backend/php/userPageChange.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/backend/php/userPageChange.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/info.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/info.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/public/js/menu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/backend/php/scripts/checkLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/backend/php/scripts/checkLogin.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

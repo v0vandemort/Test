@@ -23,8 +23,11 @@ $query->execute([
 ]);
 
 $userData = $query->fetchAll();
+//echo"<pre>";
+//print_r($userData);
+//echo"</pre>";
 
-if ((($userData[0]['Email'] == $login) or ($userData[0]['Phone'] == $login)) and ($userData[0]["Password"] == $password)) {
+if (!empty($userData) and(($userData[0]['Email'] == $login) or ($userData[0]['Phone'] == $login)) and ($userData[0]["Password"] == $password)) {
     $_SESSION['message'] = 'Вы успешно авторизованы';
     $_SESSION['user-id'] = $userData[0]['UserId'];
     $_SESSION['logged-in'] = true;
