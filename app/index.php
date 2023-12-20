@@ -23,50 +23,38 @@ session_start();
         </DIV>
         <div class="menu">
             <ul>
-                <li><a href="backend/php/userPage.php" >Мой профиль</a></li>
-                <li><a href="backend/php/allUsersPage.php" >Все пользователи</a></li>
+
             </ul>
         </div>
         <div class="tel">
             <ul align="right">
-                <?php
-                if(isset($_SESSION['logged-in'])){
-                    if($_SESSION['logged-in']){
-                        echo '<li><a href="../../backend/php/scripts/logout.php" >Выход</a></li>';
 
-
-                    }
-                    else {
-                        echo '<li><a href="../../backend/php/loginPage.php" >Авторизация</a></li>';
-                        echo '<li><a href="../../backend/php/registrationPage.php">Регистрация</a></li>';
-                    }
-                }
-                else{
-                    echo '<li><a href="../../backend/php/loginPage.php" >Авторизация</a></li>';
-                    echo '<li><a href="../../backend/php/registrationPage.php">Регистрация</a></li>';
-
-
-                }
-                ?>
             </ul>
         </div>
     </header>
 
     <main id="main" class="demo">
         <section >
-            <h1 align="center">Новая соцсеть</h1>
-            <h1 align="center">ТЕСТ</h1>
+            <h1 align="center">Набор задачек</h1>
+            <h1 align="center">Условия задачек тут</h1>
         </section>
         <section width="50%" maxwidth="50%" align="center">
-
-                <?php
-
-
-                require_once "./public/connect.php";
-                ?>
-
-
+            <h5 align="center" onclick="www.itmathrepetitor.ru/programmirovanie-zadachi-alg/">http://www.itmathrepetitor.ru/programmirovanie-zadachi-alg/</h5>
         </section>
+        <table align="center">
+            <tr>
+                <td>
+                    Задача
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="backend/task1/task1.php">
+                    Задача 1 - Угадай число
+                    </a>
+                </td>
+            </tr>
+        </table>
     </main>
 
 
